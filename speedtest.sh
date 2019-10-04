@@ -26,7 +26,7 @@ echo "[info][$(date)] -- Measured ping: ${SERVER_PING}ms"
 echo "[info][$(date)] -- Measured download speed: ${DOWNLOAD}"
 echo "[info][$(date)] -- Measured upload speed: ${UPLOAD}"
 
-QUERY='speedtests,host='${CLIENT}',isp_name='${ISP_NAME}',isp_ip='${ISP_IP}',isp_lon='${ISP_LON}',isp_lat='${ISP_LAT}',server_name='${SERVER_NAME}',server_lon='${SERVER_LON}',server_lat='${SERVER_LAT}',server_name_sponsor='${SERVER_NAME_SPONSOR}',server_id='${SERVER_ID}' download='${DOWNLOAD}',upload='${UPLOAD}',ping='${SERVER_PING}
+QUERY='speedtests,host='${HOST}',isp_name='${ISP_NAME}',isp_ip='${ISP_IP}',isp_lon='${ISP_LON}',isp_lat='${ISP_LAT}',server_name='${SERVER_NAME}',server_lon='${SERVER_LON}',server_lat='${SERVER_LAT}',server_name_sponsor='${SERVER_NAME_SPONSOR}',server_id='${SERVER_ID}' download='${DOWNLOAD}',upload='${UPLOAD}',ping='${SERVER_PING}
 echo "${QUERY}" > /tmp/postdata
 curl -s -XPOST -u ${INFLUX_DB_USER}:${INFLUX_DB_PASSWORD} "${INFLUXDB_HOST}/write?db=${INFLUXDB_DB}" --data-binary @/tmp/postdata
 echo "[info][$(date)] Done!"

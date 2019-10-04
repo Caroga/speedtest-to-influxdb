@@ -27,7 +27,7 @@ Before starting it is good to know that for influxdb the following structure is 
 ## Setup
 The following environment variables are available:
 ```
-- CLIENT=<hostname or some other identifier>
+- HOST=<hostname or some other identifier>
 - INFLUXDB_HOST=
 - INFLUXDB_DB=
 - INFLUX_DB_USER=
@@ -35,12 +35,12 @@ The following environment variables are available:
 ```
 Run the image with the following one-liner:
 ```
-docker run --rm -it -e "CLIENT=myhostname" -e "INFLUXDB_HOST=hosturl.com" -e "INFLUXDB_DB=speedtest" -e "INFLUX_DB_USER=speedtest" -e "INFLUX_DB_PASSWORD=speedtest" caroga/speedtest-to-influxdb:latest
+docker run --rm -it -e "HOST=myhostname" -e "INFLUXDB_HOST=hosturl.com" -e "INFLUXDB_DB=speedtest" -e "INFLUX_DB_USER=speedtest" -e "INFLUX_DB_PASSWORD=speedtest" caroga/speedtest-to-influxdb:latest
 ```
 
 ## Crontab
 Will run the docker instance every 20 minutes.
 
 ```
-*/20 * * * *  root docker run --rm -it -e "CLIENT=myhostname" -e "INFLUXDB_HOST=hosturl.com" -e "INFLUXDB_DB=speedtest" -e "INFLUX_DB_USER=speedtest" -e "INFLUX_DB_PASSWORD=speedtest" caroga/speedtest-to-influxdb:latest
+*/20 * * * *  root docker run --rm -it -e "HOST=myhostname" -e "INFLUXDB_HOST=hosturl.com" -e "INFLUXDB_DB=speedtest" -e "INFLUX_DB_USER=speedtest" -e "INFLUX_DB_PASSWORD=speedtest" caroga/speedtest-to-influxdb:latest
 ```
