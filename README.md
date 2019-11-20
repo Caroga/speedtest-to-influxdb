@@ -50,7 +50,9 @@ Will run the docker instance every 20 minutes.
 
 # F.A.Q
 **Running the image interactively**
+
 You can add `-it` to the command above to run the image interactively: `docker run --rm -it -e "HOST...`
 
 **It doesn't seem to work, can I debug some more information?**
+
 At the moment there is no debug settings implemented, but by running the container interactively you can change the script located at `/bin/rspeedtest` to remove the `-s` on line 31. This will possible give you some more feedback.
