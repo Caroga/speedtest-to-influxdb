@@ -33,6 +33,9 @@ The following environment variables are available:
 - INFLUX_DB_USER=
 - INFLUX_DB_PASSWORD=
 ```
+
+The port is not defined by default, so if you want to connect to a specific port, you can provide it with a semi-colon, for example: `hosturl.com:8086`.
+
 Run the image with the following one-liner:
 ```
 docker run --rm -it -e "HOST=myhostname" -e "INFLUXDB_HOST=hosturl.com" -e "INFLUXDB_DB=speedtest" -e "INFLUX_DB_USER=speedtest" -e "INFLUX_DB_PASSWORD=speedtest" caroga/speedtest-to-influxdb:latest
